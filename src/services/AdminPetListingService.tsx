@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_URL = "http://localhost:8080/api/admin/pet-listings";
+const API_URL = "https://pawfinder-backend.onrender.com/api/admin/pet-listings";
 
 export const getPendingPetListings = async () => {
   try {
@@ -54,7 +54,7 @@ export const rejectPetListing = async (id: string, listingType: string) => {
 
 export const getAdoptionPetListings = async () => {
   try {
-    const response = await axios.get("http://localhost:8080/api/admin/adoptionrequests");
+    const response = await axios.get("https://pawfinder-backend.onrender.com/api/admin/adoptionrequests");
     return response.data;
   } catch (error) {
     console.error("Error fetching adoption pet listings:", error);

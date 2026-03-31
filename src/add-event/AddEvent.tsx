@@ -36,7 +36,7 @@ const AddEvent: React.FC = () => {
   const fetchEvents = async () => {
     try {
       setLoading(true);
-      const response = await fetch('http://localhost:8080/api/admin/events');
+      const response = await fetch('https://pawfinder-backend.onrender.com/api/admin/events');
       if (!response.ok) {
         throw new Error('Failed to fetch events');
       }
@@ -102,8 +102,8 @@ const AddEvent: React.FC = () => {
 
     try {
       const url = isEditing 
-        ? `http://localhost:8080/api/admin/events/${editingId}`
-        : 'http://localhost:8080/api/admin/events';
+        ? `https://pawfinder-backend.onrender.com/api/admin/events/${editingId}`
+        : 'https://pawfinder-backend.onrender.com/api/admin/events';
       
       const method = isEditing ? 'PUT' : 'POST';
 
@@ -162,7 +162,7 @@ const AddEvent: React.FC = () => {
 
     try {
       setLoading(true);
-      const response = await fetch(`http://localhost:8080/api/admin/events/${id}`, {
+      const response = await fetch(`https://pawfinder-backend.onrender.com/api/admin/events/${id}`, {
         method: 'DELETE'
       });
 
